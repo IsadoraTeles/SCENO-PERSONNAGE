@@ -1,0 +1,14 @@
+def updateTable(t, key, val):
+    if t.findCell(key, cols = [0]):
+        luluRow = t.findCell(key, cols = [0]).row
+        t.replaceRow(luluRow, [key, val], entireRow = True)
+        
+    else:
+        t.appendRow([key, val])
+    return
+
+table = op('tableIO')
+
+updateTable(table, 'sonar', 0)
+updateTable(table, 'fsr', 0)
+updateTable(table, 'velostat', 0)
